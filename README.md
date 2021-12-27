@@ -9,7 +9,9 @@ TensorFlow version is 1.12.0 used for this project.
 
 
 ## a. prepare data: 
-Data has been prepared in new_exp_fr folder. five pickle files are available in pickle format.
+The new_exp_fr folder, which include my_embedding_file and five pickle file, is  available on this link:  https://drive.google.com/drive/folders/1T-UlL24VmQOQCRmyX_3D66jbvnG2iogr?usp=sharing
+
+Data has been prepared in new_exp_fr folder.
 
 
 
