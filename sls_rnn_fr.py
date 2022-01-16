@@ -37,15 +37,15 @@ def test():
     gen_para = generate_parameters()
     gen_para.decode_alpha = 0.8
     gen_para.beam_size = 30
-    gen_para.model_path = 'new_exp_fr/model_domain_combined/best.100.model'
+    gen_para.model_path = '/content/drive/MyDrive/new_exp_fr/model_domain_combined/best.200.model'
     generate_copy(para=gen_para, copy=True, save_bpe_result=True)
     test_bleu = evaluate()
     print("test_bleu:", str(test_bleu))
 
 if __name__=='__main__':
-    # train_rnn()
+    train_rnn()
     # train_rnn_combined()
-    test()
+    #test()
 
 
 
