@@ -4,7 +4,7 @@ from evaluate_.evaluate import get_ref_src_list
 
 def evaluate(gen_file_path=None,refs_prefix=None):
     if gen_file_path is None:
-        gen_file_path = '/content/drive/MyDrive/new_exp_fr/informal.semd.result''
+        gen_file_path = '/content/drive/MyDrive/new_exp_fr/informal.semd.result'
     if refs_prefix is None:
         refs_prefix='/content/drive/MyDrive/data/Family_Relationships/test/formal.ref'
     # gen_file_path='./new_exp_fr/informal.test.rule.1'
