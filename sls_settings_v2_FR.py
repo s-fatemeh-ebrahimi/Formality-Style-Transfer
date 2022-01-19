@@ -163,7 +163,7 @@ class generate_parameters(parameters):
     def __init__(self,arch_type="rnn"):
         super(generate_parameters, self).__init__()
         self.output_path = '/content/drive/MyDrive/new_exp_fr/s2s_sls/informal.semd.result'
-        self.model_path = '/content/drive/MyDrive/new_exp_fr/model_domain_combined/best.200.model'
+        self.model_path = '/content/drive/MyDrive/new_exp_fr/sls_rnn/best.4300.model'
         self.ckpt_for_infer = '/content/drive/MyDrive/new_exp_fr/s2s_sls/infer'
         self.ckpt_for_train = '/content/drive/MyDrive/new_exp_fr/s2s_sls/train'
         self.batch_size = 16
