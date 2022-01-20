@@ -4,7 +4,7 @@ import os
 
 MAX_LENGTH = np.int32(150)
 exp_main_path='/content/drive/MyDrive/new_exp_fr/'
-embedding_path='/content/drive/MyDrive/model.vec'
+embedding_path='/content/drive/MyDrive/cc.en.300.vec'
 
 informal_train_path='/content/drive/MyDrive/data/Family_Relationships/train/informal'
 formal_train_path='/content/drive/MyDrive/data/Family_Relationships/train/formal'
