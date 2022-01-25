@@ -3,42 +3,42 @@ import os
 
 
 MAX_LENGTH = np.int32(150)
-exp_main_path='/content/drive/MyDrive/new_exp_fr/'
-embedding_path='/content/drive/MyDrive/cc.en.300.vec'
+exp_main_path='./new_exp_fr/'
+embedding_path='./cc.en.300.vec'
 
-informal_train_path='/content/drive/MyDrive/data/Family_Relationships/train/informal'
-formal_train_path='/content/drive/MyDrive/data/Family_Relationships/train/formal'
+informal_train_path='./data/Family_Relationships/train/informal'
+formal_train_path='./data/Family_Relationships/train/formal'
 
-informal_val_path='/content/drive/MyDrive/data/Family_Relationships/tune/informal'
-formal_val_path='/content/drive/MyDrive/data/Family_Relationships/tune/formal'
-
-
-informal_test_path='/content/drive/MyDrive/data/Family_Relationships/test/informal'
-formal_test_path='/content/drive/MyDrive/data/Family_Relationships/test/formal.ref1'
+informal_val_path='./data/Family_Relationships/tune/informal'
+formal_val_path='./data/Family_Relationships/tune/formal'
 
 
-informal_val_refs=['/content/drive/MyDrive/data/Family_Relationships/tune/formal.ref0',
-                  '/content/drive/MyDrive/data/Family_Relationships/tune/formal.ref1',
-                  '/content/drive/MyDrive/data/Family_Relationships/tune/formal.ref2',
-                  '/content/drive/MyDrive/data/Family_Relationships/tune/formal.ref3']
-formal_val_refs=['/content/drive/MyDrive/data/Family_Relationships/tune/informal.ref0',
-                '/content/drive/MyDrive/data/Family_Relationships/tune/informal.ref1',
-                '/content/drive/MyDrive/data/Family_Relationships/tune/informal.ref2',
-                '/content/drive/MyDrive/data/Family_Relationships/tune/informal.ref3']
-fm2inf_bleu_inf_src='/content/drive/MyDrive/data/Family_Relationships/tune/informal.ref0'
-fm2inf_bleu_fm_src='/content/drive/MyDrive/data/Family_Relationships/tune/formal'
-add_inf_data='/content/drive/MyDrive/data/Entertainment_Music/train/informal'
-add_fm_data='/content/drive/MyDrive/data/Entertainment_Music/train/formal'
-# inf_lm_score_file='/content/new_exp_fr/add_data/informal.add.rule.bpe.bpe_len_filtered.score'
-# fm_lm_score_file='/content/new_exp_fr/add_data/formal.add.rule.bpe.bpe_len_filtered.score'
+informal_test_path='./data/Family_Relationships/test/informal'
+formal_test_path='./data/Family_Relationships/test/formal.ref1'
+
+
+informal_val_refs=['./data/Family_Relationships/tune/formal.ref0',
+                  './data/Family_Relationships/tune/formal.ref1',
+                  './data/Family_Relationships/tune/formal.ref2',
+                  './data/Family_Relationships/tune/formal.ref3']
+formal_val_refs=['./data/Family_Relationships/tune/informal.ref0',
+                './data/Family_Relationships/tune/informal.ref1',
+                './data/Family_Relationships/tune/informal.ref2',
+                './data/Family_Relationships/tune/informal.ref3']
+fm2inf_bleu_inf_src='./data/Family_Relationships/tune/informal.ref0'
+fm2inf_bleu_fm_src='./data/Family_Relationships/tune/formal'
+add_inf_data='./data/Entertainment_Music/train/informal'
+add_fm_data='./data/Entertainment_Music/train/formal'
+# inf_lm_score_file=./new_exp_fr/add_data/informal.add.rule.bpe.bpe_len_filtered.score'
+# fm_lm_score_file='./new_exp_fr/add_data/formal.add.rule.bpe.bpe_len_filtered.score'
 #output:
 # suffix='_3'
-train_pkl_path='/content/drive/MyDrive/new_exp_fr/train.pkl'
-val_pkl_path='/content/drive/MyDrive/new_exp_fr/val.pkl'
-test_pkl_path='/content/drive/MyDrive/new_exp_fr/test.pkl'
-inf2fm_bleu_val_pkl_path='/content/drive/MyDrive/new_exp_fr/inf2fm_val.pkl'
-fm2inf_bleu_val_pkl_path='/content/drive/MyDrive/new_exp_fr/fm2inf_val.pkl'
-# add_data_big_pkl_path='/content/gdrive/MyDrive/new_exp_fr/add_data_big.pkl'
+train_pkl_path='./new_exp_fr/train.pkl'
+val_pkl_path='./new_exp_fr/val.pkl'
+test_pkl_path='./new_exp_fr/test.pkl'
+inf2fm_bleu_val_pkl_path='./new_exp_fr/inf2fm_val.pkl'
+fm2inf_bleu_val_pkl_path='./new_exp_fr/fm2inf_val.pkl'
+# add_data_big_pkl_path='./new_exp_fr/add_data_big.pkl'
 
 class parameters():
     def __init__(self):
@@ -85,10 +85,10 @@ class train_parameters(parameters):
         self.n_epochs = 5
         self.batch_size = 128
         self.continue_train =False
-        self.ckpt_for_infer='/content/drive/MyDrive/new_exp_fr/s2s_sls/infer'
-        self.ckpt_for_train='/content/drive/MyDrive/new_exp_fr/s2s_sls/train'
-        self.last_ckpt_for_infer = '/content/drive/MyDrive/new_exp_fr/s2s_sls/infer'
-        self.last_ckpt_for_train = '/content/drive/MyDrive/new_exp_fr/s2s_sls/train'
+        self.ckpt_for_infer='./new_exp_fr/s2s_sls/infer'
+        self.ckpt_for_train='./new_exp_fr/s2s_sls/train'
+        self.last_ckpt_for_infer = './new_exp_fr/s2s_sls/infer'
+        self.last_ckpt_for_train = './new_exp_fr/s2s_sls/train'
         self.train_pkl_path = [train_pkl_path]#'./new_exp_fr/family_relationships.addori.pkl']
         # './new_exp_fr/add_data/p_inf_and_fm.add.smt.without_rule.origincase.pkl',
         # './new_exp_fr/add_data/inf_and_p_fm.add.smt.without_rule.origincase.pkl']
@@ -129,7 +129,7 @@ class train_parameters(parameters):
             self.beam_size = 4
             self.train_pkl_path = [train_pkl_path]
             self.train_step = [['match', 'inf2fm', 'fm2inf'], ['match', 'inf2fm', 'fm2inf']]
-            self.save_dir = '/content/drive/MyDrive/new_exp_fr/model_domain_combined/'
+            self.save_dir = './new_exp_fr/model_domain_combined/'
             self.train_upweight = [1, 2]
             self.apply_sample_weight = [1, 1]
             self.dataset_lr_weight = [1, 1]
@@ -143,7 +143,7 @@ class train_parameters(parameters):
             self.beam_size = 4
             self.train_pkl_path = [train_pkl_path]
             self.train_step = [['match', 'inf2inf', 'fm2fm', 'inf2fm', 'fm2inf']]
-            self.save_dir = '/content/drive/MyDrive/new_exp_fr/model_domain_combined/'
+            self.save_dir = './new_exp_fr/model_domain_combined/'
             self.train_upweight = [1]
             self.apply_sample_weight = [1]
             self.dataset_lr_weight = [1]
@@ -162,10 +162,10 @@ class train_parameters(parameters):
 class generate_parameters(parameters):
     def __init__(self,arch_type="rnn"):
         super(generate_parameters, self).__init__()
-        self.output_path = '/content/drive/MyDrive/new_exp_fr/s2s_sls/informal.semd.result'
-        self.model_path = '/content/drive/MyDrive/new_exp_fr/model_domain_combined/best.4300.model'
-        self.ckpt_for_infer = '/content/drive/MyDrive/new_exp_fr/s2s_sls/infer'
-        self.ckpt_for_train = '/content/drive/MyDrive/new_exp_fr/s2s_sls/train'
+        self.output_path = './new_exp_fr/s2s_sls/informal.semd.result'
+        self.model_path = './new_exp_fr/model_domain_combined/best.4300.model'
+        self.ckpt_for_infer = './new_exp_fr/s2s_sls/infer'
+        self.ckpt_for_train = './new_exp_fr/s2s_sls/train'
         self.batch_size = 16
         self.src_is_inf = True
         self.input_path = test_pkl_path
