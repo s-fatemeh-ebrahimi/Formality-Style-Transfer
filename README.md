@@ -9,10 +9,7 @@ TensorFlow version is 1.12.0 used for this project.
 
 
 ## a. prepare data: 
-The new_exp_fr folder, which include my_embedding_file and five pickle file, is  available on this link:  https://drive.google.com/drive/folders/1T-UlL24VmQOQCRmyX_3D66jbvnG2iogr?usp=sharing
-
-Data has been prepared in new_exp_fr folder. Download this folder from the link above.
-
+The new_exp_fr folder, should include embedding_file and five pickle file to start training.
 
 
 ## b. running train stage:
